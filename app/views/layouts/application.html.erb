@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= full_title(yield(:title)) %></title>
-    <meta charset="utf-8">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+<title><%= full_title(yield(:title)) %></title>
+<meta charset="utf-8">
+<%= csrf_meta_tags %>
+<%= csp_meta_tag %>
+<%= stylesheet_link_tag 'application', media: 'all',
 
-    <%= stylesheet_link_tag 'application', media: 'all',
-                                           'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+'data-turbolinks-track': 'reload' %>
+<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+<%= render 'layouts/shim' %>
 
-  <body>
-    <%= yield %>
-  </body>
+</head>
+<body>
+<%= render 'layouts/header' %>
+<div class="container">
+<%= yield %>
+<%= render 'layouts/footer' %>
+</div>
+
+
+
+</body>
 </html>
